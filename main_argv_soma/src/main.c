@@ -2,14 +2,7 @@
  * @header      main.c
  * @abstract    Teste das caracteristicas da funcao main
  * @discussion  Estudo das caracteristicas da função main
- *              Parametros argc e argv
- *              argc - 'e o numero de parametros que foi passado 
- *                      de comandos
- *              argv - 'e o array dos parametros passados na linha
- *                      de comandos
- * 
- *              nota: as variaveis do parametro main nao tem que se chamar
- *                    argv e argc
+ *              ir'a fazer a soma do argv[1] e argv[2]
  * 
  * @author      Daniel Torres <a17442|at|alunos.ipca.pt>
  * @link        Daniel Torres GIT <https://github.com/nargotik>
@@ -30,15 +23,18 @@
  */
 int main(int argc, char** argv)
 {
-    int parametros = argc;
     
-    printf("Numero de parametros: %d\n", parametros);
+    printf("Numero de parametros: %d\n", argc);
     
-    // Ciclo para correr os parametros e mostrar
-    int i;
-    for (i = 0; i < parametros; i++) {
-        printf("Parametro %d - %s\n",i,argv[i]);
+    // Verifica se tem 3 parametros
+    if (argc == 3) {
+       int op1,op2;
+       op1 = atoi(argv[1]);
+       op2 = atoi(argv[2]);
+       
+       printf("Soma de %d + %d = %d\n\n",op1,op2, op1+op2 );
     }
+    
     
     return (EXIT_SUCCESS);
 }
